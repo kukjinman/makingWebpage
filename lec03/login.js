@@ -1,3 +1,6 @@
+const loginForm = document.querySelector("#loginform")
+
+loginForm.addEventListener("submit",getName);
 
 function getName() {
 
