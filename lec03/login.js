@@ -1,9 +1,13 @@
-const loginForm = document.querySelector("#loginform")
+const loginForm = document.querySelector("#loginform");
+const loginInput = document.querySelector("#loginform input");
 
 loginForm.addEventListener("submit",getName);
 
+
 function getName() {
 
-    alert("getName이 호출 됨");
+
+    const username = loginInput.value;
+    alert("username : " + username);
 
 }
