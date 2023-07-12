@@ -1,13 +1,15 @@
 const loginForm = document.querySelector("#loginform");
 const loginInput = document.querySelector("#loginform input");
+const greetingHeader = document.querySelector("#greeting");
 
-loginForm.addEventListener("submit",getName);
+loginForm.addEventListener("submit", getName);
 
 
-function getName() {
+function getName(parm) {
 
+    parm.preventDefault();
 
     const username = loginInput.value;
-    alert("username : " + username);
+    loginForm.style.display = "none";
 
 }
