@@ -12,4 +12,6 @@ function getName(parm) {
     const username = loginInput.value;
     loginForm.style.display = "none";
 
+    greetingHeader.innerHTML = "안녕하세요! " + username + "님";
+
 }
