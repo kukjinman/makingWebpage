@@ -15,3 +15,13 @@ body {
     margin: 0 auto;
     text-align: center;
 }
+
+#backgroundImage {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: brightness(70%);
+}
