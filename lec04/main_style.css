@@ -8,12 +8,26 @@ body {
 
 #loginform input:nth-child(1) {
     text-align: center;
+    color: white;
     font-size: 1.3rem;
+    width: 240px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#loginform input:nth-child(1):hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#loginform input:nth-child(1):focus {
+    outline: none;
+    border-bottom: 3px solid white;
+    background-color: rgba(255, 255, 255, 0);
 }
 
 #greeting {
     margin: 0 auto;
     text-align: center;
+    color: white;
 }
 
 #backgroundImage {
