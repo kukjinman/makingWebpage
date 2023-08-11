@@ -29,20 +29,3 @@ body {
     text-align: center;
     color: white;
 }
-
-#backgroundImage {
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    filter: brightness(70%);
-}
-
-#clock {
-    text-align: center;
-    font-size: 8rem;
-    margin: 10px;
-    color: white;
-}
