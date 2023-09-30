@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/background.css">
+    <link rel="stylesheet" href="css/clock.css">
+    <link rel="stylesheet" href="css/calendar.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js'></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <form id="loginform">
+        <input required type="text" placeholder="What is your name?" />
+        <button type="submit">Login</button>
+    </form>
+
+    <h1 id="greeting"></h1>
+    <h2 id="clock">00:00:00</h2>
+
+    <div id="container">
+        <div id='calendar'></div>
+        <div id='todo_contatiner'>
+            <p id="cur_date">일정</p>
+        </div>
+
+
+    </div>
+
+
+    <script src="js/login.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js//calendar.js"></script>
+</body>
+
+</html>
