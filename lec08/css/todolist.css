@@ -22,3 +22,15 @@
     width: 540px;
     transition: all, 0.4s;
 }
+
+#todoform input:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+#todoform input:focus {
+    background-color: rgba(0, 0, 0, 0);
+}
+
+#todoform input::-webkit-input-placeholder {
+    color: rgb(50, 50, 50)
+}
