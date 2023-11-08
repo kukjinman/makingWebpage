@@ -14,6 +14,10 @@
     padding: 15px;
 }
 
+#todoform {
+    text-align: center;
+}
+
 #todoform input {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.7);
@@ -32,5 +36,16 @@
 }
 
 #todoform input::-webkit-input-placeholder {
-    color: rgb(50, 50, 50)
+    color: rgb(50, 50, 50);
+}
+
+#todolist li {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 2rem;
+    width: 540px;
+    list-style: none;
+}
+
+#todolist li:hover {
+    color: rgb(254, 167, 6);
 }
