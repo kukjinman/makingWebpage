@@ -1,6 +1,7 @@
 const todoform = document.querySelector("#todoform");
 const todoInput = document.querySelector("#todoform input");
 const todoList_ul = document.querySelector("#todolist");
+const curDate_p = document.querySelector("#cur_date");
 
 todoform.addEventListener("submit", handleToDoSummit);
 
@@ -21,4 +22,9 @@ function handleToDoSummit(parm) {
 
     todoList_ul.appendChild(todo_cur_li);
 
+}
+
+function setCurrentDate(date) {
+    console.log("setCurrentDate - " + date);
+    curDate_p.textContent = date + " 일정";
 }

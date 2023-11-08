@@ -11,10 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
         dateClick: function (info) {
             console.log("Clicked event occurs : date = " + info.dateStr);
 
+            setCurrentDate(info.dateStr);
+
             // addEventToCalendar({ start: info.dateStr });
-
-            removeEventFromCalendar(info.dateStr);
-
+            // removeEventFromCalendar(info.dateStr);
         }
 
     });
