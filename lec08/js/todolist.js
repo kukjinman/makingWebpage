@@ -5,6 +5,10 @@ const curDate_p = document.querySelector("#cur_date");
 
 todoform.addEventListener("submit", handleToDoSummit);
 
+let DBLists = [];
+const DBLIST_KEY = "DBLISTS"
+
+
 function handleToDoSummit(parm) {
     console.log("handleToDoSummit is called");
     parm.preventDefault();
@@ -22,9 +26,16 @@ function handleToDoSummit(parm) {
 
     todoList_ul.appendChild(todo_cur_li);
 
+    // save localstorage code
+    saveDBListInLocalStorage();
 }
 
 function setCurrentDate(date) {
     console.log("setCurrentDate - " + date);
     curDate_p.textContent = date + " 일정";
+}
+
+function saveDBListInLocalStorage() {
+    console.log("saveDBListInLocalStorage is called");
+    localStorage.setItem(DBLIST_KEY, DBLists);
 }
