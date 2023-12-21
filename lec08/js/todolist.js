@@ -48,10 +48,22 @@ function addNewTodo(date, newTodo) {
     curTodoList = new TodoList(date);
     curTodoList.todos.push(newTodo);
 
-    DBLists.push(curTodoList);
+    DBLists.push(JSON.stringify(curTodoList));
 }
 
 function saveDBListInLocalStorage() {
     console.log("saveDBListInLocalStorage is called");
     localStorage.setItem(DBLIST_KEY, DBLists);
 }
+
+function loadTodoInit() {
+    console.log("loadTodoInit is called");
+    var today = new Date();
+
+    var formattedToday = today.toISOString().split('T')[0];
+
+    console.log(formattedToday);
+    setCurrentDate(formattedToday);
+}
+
+loadTodoInit()
