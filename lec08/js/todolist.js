@@ -58,12 +58,20 @@ function saveDBListInLocalStorage() {
 
 function loadTodoInit() {
     console.log("loadTodoInit is called");
+
+    // 날짜 가져와서 초기화 해주는 부분
     var today = new Date();
-
     var formattedToday = today.toISOString().split('T')[0];
-
     console.log(formattedToday);
     setCurrentDate(formattedToday);
+
+    // DBLists 가져와서 초기화 해주는 부분
+    const savedDBLists = localStorage.getItem(DBLIST_KEY)
+
+    if (savedDBLists !== null) {
+        DBLists = savedDBLists
+    }
+    console.log(DBLists)
 }
 
 loadTodoInit()
