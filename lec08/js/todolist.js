@@ -45,15 +45,21 @@ function setCurrentDate(date) {
 
 function addNewTodo(date, newTodo) {
     console.log("addNewTodo is called");
-    curTodoList = new TodoList(date);
+
+    curTodoList = DBLists.find(list => list.date === date)
+    if (!curTodoList) {
+        curTodoList = new TodoList(date);
+        DBLists.push(curTodoList);
+
+    }
     curTodoList.todos.push(newTodo);
 
-    DBLists.push(JSON.stringify(curTodoList));
+
 }
 
 function saveDBListInLocalStorage() {
     console.log("saveDBListInLocalStorage is called");
-    localStorage.setItem(DBLIST_KEY, DBLists);
+    localStorage.setItem(DBLIST_KEY, JSON.stringify(DBLists));
 }
 
 function loadTodoInit() {
@@ -69,7 +75,7 @@ function loadTodoInit() {
     const savedDBLists = localStorage.getItem(DBLIST_KEY)
 
     if (savedDBLists !== null) {
-        DBLists = savedDBLists
+        DBLists = JSON.parse(savedDBLists)
     }
     console.log(DBLists)
 }
