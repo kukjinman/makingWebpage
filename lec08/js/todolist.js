@@ -14,6 +14,20 @@ function TodoList(date) {
     this.todos = [];
 }
 
+function displayTodoItem(item) {
+    console.log("displayTodoItem is called");
+
+    const todo_cur_li = document.createElement("li");
+    const todo_cur_span = document.createElement("span");
+
+    todo_cur_span.innerText = item;
+
+    todo_cur_li.appendChild(todo_cur_span);
+
+    todoList_ul.appendChild(todo_cur_li);
+
+}
+
 function handleToDoSummit(parm) {
     console.log("handleToDoSummit is called");
     parm.preventDefault();
@@ -22,14 +36,7 @@ function handleToDoSummit(parm) {
 
     todoInput.value = "";
 
-    const todo_cur_li = document.createElement("li");
-    const todo_cur_span = document.createElement("span");
-
-    todo_cur_span.innerText = curTodo;
-
-    todo_cur_li.appendChild(todo_cur_span);
-
-    todoList_ul.appendChild(todo_cur_li);
+    displayTodoItem(curTodo)
 
     addNewTodo(CurrentDate, curTodo);
 
@@ -78,6 +85,19 @@ function loadTodoInit() {
         DBLists = JSON.parse(savedDBLists)
     }
     console.log(DBLists)
+
+    // DBLists 화면에 출력하기
+    if (!DBLists) {
+        return
+    }
+
+    DBLists.forEach(tlist => {
+        if (tlist.date === CurrentDate) {
+            tlist.todos.forEach(displayTodoItem)
+
+        }
+    })
+
 }
 
 loadTodoInit()
