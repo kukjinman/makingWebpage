@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function () {
             console.log("Clicked event occurs : date = " + info.dateStr);
 
             setCurrentDate(info.dateStr);
-
+            loadcurrentTodo();
             // addEventToCalendar({ start: info.dateStr });
             // removeEventFromCalendar(info.dateStr);
         }

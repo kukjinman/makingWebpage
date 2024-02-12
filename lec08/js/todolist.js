@@ -14,6 +14,15 @@ function TodoList(date) {
     this.todos = [];
 }
 
+function clearTodoItems() {
+    console.log("clearTodoItems is called");
+
+    while (todoList_ul.firstChild) {
+        todoList_ul.removeChild(todoList_ul.firstChild)
+    }
+
+}
+
 function displayTodoItem(item) {
     console.log("displayTodoItem is called");
 
@@ -69,14 +78,11 @@ function saveDBListInLocalStorage() {
     localStorage.setItem(DBLIST_KEY, JSON.stringify(DBLists));
 }
 
-function loadTodoInit() {
-    console.log("loadTodoInit is called");
+function loadcurrentTodo() {
+    console.log("loadcurrentTodo is called");
 
-    // 날짜 가져와서 초기화 해주는 부분
-    var today = new Date();
-    var formattedToday = today.toISOString().split('T')[0];
-    console.log(formattedToday);
-    setCurrentDate(formattedToday);
+    // 기존의 화면에 display된 item clear 코드
+    clearTodoItems()
 
     // DBLists 가져와서 초기화 해주는 부분
     const savedDBLists = localStorage.getItem(DBLIST_KEY)
@@ -97,6 +103,21 @@ function loadTodoInit() {
 
         }
     })
+
+
+}
+
+
+function loadTodoInit() {
+    console.log("loadTodoInit is called");
+
+    // 날짜 가져와서 초기화 해주는 부분
+    var today = new Date();
+    var formattedToday = today.toISOString().split('T')[0];
+    console.log(formattedToday);
+    setCurrentDate(formattedToday);
+
+    loadcurrentTodo();
 
 }
 
