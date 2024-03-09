@@ -23,14 +23,15 @@ function clearTodoItems() {
 
 }
 
-function displayTodoItem(item) {
+function displayTodoItem(todo_obj_) {
     console.log("displayTodoItem is called");
 
     const todo_cur_li = document.createElement("li");
     const todo_cur_span = document.createElement("span");
     const todo_remove_btn = document.createElement("button");
 
-    todo_cur_span.innerText = item;
+    todo_cur_li.id = todo_obj_.id;
+    todo_cur_span.innerText = todo_obj_.text;
     todo_remove_btn.innerText = "X";
 
     todo_cur_li.appendChild(todo_cur_span);
@@ -43,14 +44,19 @@ function displayTodoItem(item) {
 function handleToDoSummit(parm) {
     console.log("handleToDoSummit is called");
     parm.preventDefault();
-    const curTodo = todoInput.value;
-    console.log("todoInput value : " + curTodo);
+
+    const cur_todos_obj = {
+        id: Date.now(),
+        text: todoInput.value
+    }
+
+    console.log("todos obj id: " + cur_todos_obj.id + " text: " + cur_todos_obj.text);
 
     todoInput.value = "";
 
-    displayTodoItem(curTodo)
+    displayTodoItem(cur_todos_obj)
 
-    addNewTodo(CurrentDate, curTodo);
+    addNewTodo(CurrentDate, cur_todos_obj);
 
     // save localstorage code
     saveDBListInLocalStorage();
