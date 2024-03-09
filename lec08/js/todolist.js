@@ -33,6 +33,8 @@ function displayTodoItem(todo_obj_) {
     todo_cur_li.id = todo_obj_.id;
     todo_cur_span.innerText = todo_obj_.text;
     todo_remove_btn.innerText = "X";
+    todo_remove_btn.addEventListener("click", deleteTodo)
+
 
     todo_cur_li.appendChild(todo_cur_span);
     todo_cur_li.appendChild(todo_remove_btn);
@@ -79,6 +81,27 @@ function addNewTodo(date, newTodo) {
     }
     curTodoList.todos.push(newTodo);
 
+
+}
+
+function deleteTodo(event) {
+    console.log("deleteTodo is called");
+
+    const cur_li = event.target.parentElement;
+    console.log(" cur li id : " + cur_li.id);
+
+
+    // localstorage 선택된 li요소와 같은 id를 가진 todos_obj를 지워줄겁니다.
+
+    DBLists.forEach(todolist => {
+        todolist.todos = todolist.todos.filter(cur_todos_obj => cur_todos_obj.id !== parseInt(cur_li.id))
+    })
+
+    //li요소를 화면상에서 제거
+
+    cur_li.remove();
+
+    saveDBListInLocalStorage()
 
 }
 
