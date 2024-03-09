@@ -49,3 +49,17 @@
 #todolist li:hover {
     color: rgb(254, 167, 6);
 }
+
+#todolist button {
+    position: absolute;
+    right: 17%;
+    color: rgb(253, 133, 111);
+    font-weight: 700;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+#todolist button:hover {
+    cursor: pointer;
+}

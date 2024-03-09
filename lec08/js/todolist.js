@@ -28,10 +28,13 @@ function displayTodoItem(item) {
 
     const todo_cur_li = document.createElement("li");
     const todo_cur_span = document.createElement("span");
+    const todo_remove_btn = document.createElement("button");
 
     todo_cur_span.innerText = item;
+    todo_remove_btn.innerText = "X";
 
     todo_cur_li.appendChild(todo_cur_span);
+    todo_cur_li.appendChild(todo_remove_btn);
 
     todoList_ul.appendChild(todo_cur_li);
 
